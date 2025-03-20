@@ -53,7 +53,7 @@ This script automates the installation and configuration of:
 
 ```bash
 # Download the script
-curl -O https://raw.githubusercontent.com/YOUR_USERNAME/ubuntu-server-setup/main/ubuntu_update.sh
+curl -O https://raw.githubusercontent.com/LurnD/ubuntuscript/main/ubuntu_update.sh
 
 # Make it executable
 chmod +x ubuntu_update.sh
@@ -66,10 +66,10 @@ sudo ./ubuntu_update.sh
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/ubuntu-server-setup.git
+git clone https://github.com/LurnD/ubuntuscript.git
 
 # Navigate to the directory
-cd ubuntu-server-setup
+cd ubuntuscript
 
 # Make the script executable
 chmod +x ubuntu_update.sh
