@@ -58,6 +58,11 @@ echo "SSH server installed and started"
 echo "Installing Mosh (Mobile Shell)..."
 sudo apt install -y mosh
 
+# Install DNS utilities (dig, nslookup, etc.)
+echo "Installing DNS utilities..."
+sudo apt install -y dnsutils
+echo "DNS utilities installed"
+
 # Install and configure UFW (Uncomplicated Firewall)
 echo "Installing and configuring UFW..."
 sudo apt install -y ufw
@@ -222,6 +227,7 @@ alias ls='lsd'
 alias l='lsd -l'
 alias la='lsd -la'
 alias lt='lsd --tree'
+alias scls='sudo lastb | wc -l'
 EOF
 
 echo "Rust, bat, and lsd installed and configured"

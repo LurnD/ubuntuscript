@@ -23,6 +23,7 @@ This script automates the installation and configuration of:
 - System updates and upgrades
 - SSH server with secure configuration
 - Mosh (Mobile Shell) for persistent remote connections
+- DNS utilities (dig, nslookup, etc.) for network diagnostics
 - UFW (Uncomplicated Firewall) with SSH and Mosh protection
 - Fail2Ban for brute force attack prevention
 
@@ -94,13 +95,15 @@ sudo ./ubuntu_update.sh
 
 3. **Mosh Setup**: Mosh is installed and configured with the necessary UDP ports (60000-61000) opened in the firewall.
 
-4. **Fail2Ban Configuration**: A custom Fail2Ban configuration is created to protect against brute force attacks on SSH and Nginx.
+4. **DNS Utilities**: The script installs `dnsutils` package which includes tools like `dig` and `nslookup` for network diagnostics.
 
-5. **Shell Change**: You'll need to log out and log back in for the shell change to Zsh to take effect.
+5. **Fail2Ban Configuration**: A custom Fail2Ban configuration is created to protect against brute force attacks on SSH and Nginx.
 
-6. **Development Tools**: Tailwind CSS and shadcn/ui CLI are installed globally, so you can use them in any project with the `tailwindcss` and `shadcn-ui` commands.
+6. **Shell Change**: You'll need to log out and log back in for the shell change to Zsh to take effect.
 
-7. **Rust Tools**: The script installs `bat` (a better `cat` replacement) and `lsd` (a modern `ls` alternative) with convenient aliases configured in Zsh.
+7. **Development Tools**: Tailwind CSS and shadcn/ui CLI are installed globally, so you can use them in any project with the `tailwindcss` and `shadcn-ui` commands.
+
+8. **Rust Tools**: The script installs `bat` (a better `cat` replacement) and `lsd` (a modern `ls` alternative) with convenient aliases configured in Zsh.
 
 ## 🔍 What the Script Does
 
@@ -110,17 +113,19 @@ sudo ./ubuntu_update.sh
 
 3. **Configures SSH & Mosh**: Installs and secures SSH and Mosh for remote access
 
-4. **Sets Up Firewall**: Configures UFW with SSH and Mosh protection
+4. **Installs Network Tools**: Sets up DNS utilities for network diagnostics
 
-5. **Installs Nginx**: Sets up a web server with a custom welcome page
+5. **Sets Up Firewall**: Configures UFW with SSH and Mosh protection
 
-6. **Configures Fail2Ban**: Protects against brute force attacks
+6. **Installs Nginx**: Sets up a web server with a custom welcome page
 
-7. **Installs Rust and Tools**: Sets up Rust via rustup and installs bat and lsd
+7. **Configures Fail2Ban**: Protects against brute force attacks
 
-8. **Installs Python Tools**: Sets up Python, pip, and uv package installer
+8. **Installs Rust and Tools**: Sets up Rust via rustup and installs bat and lsd
 
-9. **Installs Node.js Tools**: Sets up Node.js, PM2, pnpm, and global frontend tools
+9. **Installs Python Tools**: Sets up Python, pip, and uv package installer
+
+10. **Installs Node.js Tools**: Sets up Node.js, PM2, pnpm, and global frontend tools
 
 ## 🛠️ Customization
 
