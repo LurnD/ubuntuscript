@@ -22,7 +22,8 @@ This script automates the installation and configuration of:
 ### 🔒 System & Security
 - System updates and upgrades
 - SSH server with secure configuration
-- UFW (Uncomplicated Firewall) with SSH protection
+- Mosh (Mobile Shell) for persistent remote connections
+- UFW (Uncomplicated Firewall) with SSH and Mosh protection
 - Fail2Ban for brute force attack prevention
 
 ### 🌐 Web Server
@@ -49,7 +50,14 @@ This script automates the installation and configuration of:
 
 ## 🔧 Usage
 
-### Option 1: Download and Run
+### Option 1: One-Line Command (Recommended)
+
+```bash
+# Download and execute in one command
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/LurnD/ubuntuscript/main/ubuntu_update.sh)"
+```
+
+### Option 2: Download and Run
 
 ```bash
 # Download the script
@@ -62,7 +70,7 @@ chmod +x ubuntu_update.sh
 sudo ./ubuntu_update.sh
 ```
 
-### Option 2: Clone the Repository
+### Option 3: Clone the Repository
 
 ```bash
 # Clone the repository
@@ -84,13 +92,15 @@ sudo ./ubuntu_update.sh
 
 2. **SSH Security**: The script configures UFW to allow SSH connections before enabling the firewall to prevent lockout.
 
-3. **Fail2Ban Configuration**: A custom Fail2Ban configuration is created to protect against brute force attacks on SSH and Nginx.
+3. **Mosh Setup**: Mosh is installed and configured with the necessary UDP ports (60000-61000) opened in the firewall.
 
-4. **Shell Change**: You'll need to log out and log back in for the shell change to Zsh to take effect.
+4. **Fail2Ban Configuration**: A custom Fail2Ban configuration is created to protect against brute force attacks on SSH and Nginx.
 
-5. **Development Tools**: Tailwind CSS and shadcn/ui CLI are installed globally, so you can use them in any project with the `tailwindcss` and `shadcn-ui` commands.
+5. **Shell Change**: You'll need to log out and log back in for the shell change to Zsh to take effect.
 
-6. **Rust Tools**: The script installs `bat` (a better `cat` replacement) and `lsd` (a modern `ls` alternative) with convenient aliases configured in Zsh.
+6. **Development Tools**: Tailwind CSS and shadcn/ui CLI are installed globally, so you can use them in any project with the `tailwindcss` and `shadcn-ui` commands.
+
+7. **Rust Tools**: The script installs `bat` (a better `cat` replacement) and `lsd` (a modern `ls` alternative) with convenient aliases configured in Zsh.
 
 ## 🔍 What the Script Does
 
@@ -98,9 +108,9 @@ sudo ./ubuntu_update.sh
 
 2. **Updates System**: Runs `apt update` and `apt upgrade`
 
-3. **Configures SSH**: Installs and secures the SSH server
+3. **Configures SSH & Mosh**: Installs and secures SSH and Mosh for remote access
 
-4. **Sets Up Firewall**: Configures UFW with SSH protection
+4. **Sets Up Firewall**: Configures UFW with SSH and Mosh protection
 
 5. **Installs Nginx**: Sets up a web server with a custom welcome page
 

@@ -54,6 +54,10 @@ sudo systemctl enable ssh
 sudo systemctl start ssh
 echo "SSH server installed and started"
 
+# Install Mosh (Mobile Shell) for better remote terminal experience
+echo "Installing Mosh (Mobile Shell)..."
+sudo apt install -y mosh
+
 # Install and configure UFW (Uncomplicated Firewall)
 echo "Installing and configuring UFW..."
 sudo apt install -y ufw
@@ -61,6 +65,10 @@ sudo apt install -y ufw
 # IMPORTANT: Allow SSH before enabling the firewall to prevent lockout
 echo "Configuring UFW to allow SSH connections before enabling..."
 sudo ufw allow ssh
+
+# Allow Mosh connections (UDP ports 60000-61000)
+echo "Configuring UFW to allow Mosh connections..."
+sudo ufw allow 60000:61000/udp
 
 # Limit SSH connection attempts to protect against brute force attacks
 echo "Limiting SSH connection attempts to protect against brute force attacks..."
